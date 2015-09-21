@@ -4,11 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
  * A user who can book hotels.
  */
+@NamedQuery(name= "getUser" , query= "Select u FROM User u WHERE u.name=:name" )
 @Entity
 @Table(name = "Customer")
 public class User implements Serializable {
@@ -57,6 +59,6 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-	return "User(" + username + ")";
+	return "User(username:" + username + ",name:" + name +")";
     }
 }
