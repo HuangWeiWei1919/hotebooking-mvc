@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  * A hotel where users may book stays.
