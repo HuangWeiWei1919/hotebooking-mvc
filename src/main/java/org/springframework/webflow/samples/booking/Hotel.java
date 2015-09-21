@@ -7,10 +7,18 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  * A hotel where users may book stays.
  */
+@NamedQueries({
+	@NamedQuery(name="getHotel", query="select h from Hotel h where h.price >= :price"),
+	@NamedQuery(name="getHotel2", query="select h from Hotel h where h.name like :name")
+})
 @Entity
 public class Hotel implements Serializable {
    
